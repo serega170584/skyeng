@@ -35,22 +35,6 @@ class Response implements ResponseInterface
     }
 
     /**
-     * @param CacheItemPoolInterface $cache
-     */
-    public function setCache(CacheItemPoolInterface $cache): void
-    {
-        $this->cache = $cache;
-    }
-
-    /**
-     * @param LoggerInterface $logger
-     */
-    public function setLogger(LoggerInterface $logger)
-    {
-        $this->logger = $logger;
-    }
-
-    /**
      * @param array $request
      *
      * @return array
