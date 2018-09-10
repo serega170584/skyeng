@@ -75,7 +75,7 @@ class Response implements ResponseInterface
             $result = $this->getRemoteRequest($input);
 
             $cacheItem
-                ->set($result)
+                ->set($cacheKey, $result)
                 ->expiresAt(
                     (new DateTime())->modify('+1 day')
                 );
@@ -94,6 +94,6 @@ class Response implements ResponseInterface
      */
     public function getCacheKey(array $input): string
     {
-        return md5($input);
+        return md5(implode('_', $input));
     }
 }
